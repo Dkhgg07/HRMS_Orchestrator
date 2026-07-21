@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login / Register</title>
+  <link rel="icon" href="icon.png">
+  <script src="../assets/js/app.js"></script>
+  <link rel="stylesheet" href="../assets/css/theme.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/login_style.css">
+</head>
+
+<body>
+  <div class="blob"></div>
+  <main>
+    <h1 style="text-align:center;color:#F5F5F0;margin-bottom:2rem;" class="metallic">ORCHESTRIX</h1>
+    <section class="container" aria-label="Authentication Forms">
+      <form id="loginForm" role="form" aria-labelledby="loginTitle">
+        <header><h2 id="loginTitle">Login</h2></header>
+        <div id="loginMessage"></div>
+        <div class="form-group">
+          <label for="loginName">Name or Email</label>
+          <input type="text" id="loginName" placeholder="Enter your name or email" required>
+        </div>
+        <div class="form-group">
+          <label for="loginPassword">Password</label>
+          <input type="password" id="loginPassword" placeholder="Enter your password" required>
+        </div>
+        <button type="submit" class="btn">Login</button>
+        <span class="toggle-link" onclick="toggleForms()" role="button">Register</span>
+      </form>
+
+      <form id="registerForm" class="hidden" role="form" aria-labelledby="registerTitle" aria-hidden="true">
+        <header><h2 id="registerTitle">Register</h2></header>
+        <div id="registerMessage"></div>
+        <div class="form-group">
+          <label for="firstName">First Name</label>
+          <input type="text" id="firstName" placeholder="Enter your first name" required>
+        </div>
+        <div class="form-group">
+          <label for="lastName">Last Name</label>
+          <input type="text" id="lastName" placeholder="Enter your last name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" placeholder="Enter your email" required>
+        </div>
+        <div class="form-group">
+          <label for="registerPassword">Password</label>
+          <input type="password" id="registerPassword" placeholder="Create a password" required>
+        </div>
+        <button type="submit" class="btn">Register</button>
+        <span class="toggle-link" onclick="toggleForms()" role="button">Back to Login</span>
+      </form>
+    </section>
+  </main>
+
+  <script src="../assets/js/app.js"></script>
+  <script src="../assets/js/login_app.js"></script>
+</body>
+</html>

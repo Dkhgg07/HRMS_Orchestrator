@@ -1,0 +1,48 @@
+{
+  "name": "hrms-orchestrator",
+  "version": "1.0.0",
+  "description": "A comprehensive Human Resource Management System with AI-powered features for employee management, project tracking, and resource optimization",
+  "keywords": [
+    "hrms",
+    "human-resources",
+    "employee-management",
+    "project-tracking",
+    "ai-assistant",
+    "dashboard",
+    "nodejs",
+    "mongodb",
+    "jwt-authentication"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AmanSingh5416/SIH---Orchestrator.git"
+  },
+  "author": "Aman Singh",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AmanSingh5416/SIH---Orchestrator/issues"
+  },
+  "homepage": "https://github.com/AmanSingh5416/SIH---Orchestrator#readme",
+  "engines": {
+    "node": ">=14.0.0",
+    "npm": ">=6.0.0"
+  },
+  "scripts": {
+    "install:backend": "cd backend && npm install",
+    "install:all": "npm run install:backend",
+    "start:backend": "cd backend && npm start",
+    "dev:backend": "cd backend && npm run dev",
+    "start:frontend": "npx serve frontend",
+    "dev": "concurrently \"npm run dev:backend\" \"npm run start:frontend\"",
+    "setup": "npm run install:all && echo Setup complete! Run 'npm run dev' to start development servers",
+    "test": "echo \"No tests specified\" && exit 0",
+    "lint": "echo \"Linting not configured\" && exit 0"
+  },
+  "devDependencies": {
+    "concurrently": "^7.6.0",
+    "serve": "^14.2.0"
+  },
+  "workspaces": [
+    "backend"
+  ]
+}

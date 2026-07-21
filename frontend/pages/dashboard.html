@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - HRMS</title>
+    
+    <!-- Prevent caching for security -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    
+    <link rel="stylesheet" href="../assets/css/dashboard.css">
+    <link rel="stylesheet" href="../assets/css/theme.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" href="icon.png">
+</head>
+<body>
+  <!-- Sidebar -->
+  <div class="sidebar" id="sidebar">
+    <button class="close-btn" id="closeBtn"><i class="fa fa-times"></i></button>
+     <div class="brand">
+      <div class="logo"><i class="fa-solid fa-user-tie"></i></div>
+    </div>
+    <nav class="nav">
+      <a href="dashboard.html" class="active"><span class="icon"><i class="fa-solid fa-house"></i></span> Dashboard</a>
+    <a href="project_analysis_member.html"><span class="icon"><i class="fa fa-chart-line"></i></span> Project Analysis</a>
+      <a href="profile.html"><span class="icon"><i class="fa fa-user"></i></span> Profile</a>
+      <a href="#" class="logout-btn"><span class="icon"><i class="fa fa-right-from-bracket"></i></span> Logout</a>
+    </nav>
+   
+    <div class="userbox">
+      <div class="user-name">Loading...</div>
+      <div class="user-role">Loading...</div>
+    </div>
+  </div>
+   <!-- Menu button -->
+  <button class="menu-btn" id="menuBtn" style="margin-left:1rem;margin-top:1rem;"><i class="fa fa-bars"></i></button>
+  <!-- Main content -->
+  <div class="center">
+    <div class="main-content">
+      <h1 class="page-title">Your Projects</h1>
+      <div class="projects" id="projectsContainer">
+        <!-- Projects will be loaded dynamically -->
+        <div class="loading-state" id="loadingState" style="text-align: center; padding: 3rem; color: #64748b;">
+          <i class="fa fa-spinner fa-spin" style="font-size: 2rem; margin-bottom: 1rem;"></i>
+          <p>Loading your projects...</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Assistant Widget (floating) -->
+    <div class="assistant-widget" aria-live="polite" style="z-index:1;">
+      <button id="assistantToggle" class="assistant-toggle" aria-expanded="false" aria-controls="assistantPanel">
+        <i class="fa fa-robot"></i>
+      </button>
+      <div id="assistantPanel" class="assistant-panel" hidden>
+        <div class="assistant-header">
+          <span>AI Assistant</span>
+          <button id="assistantClose" class="assistant-close" aria-label="Close"><i class="fa fa-times"></i></button>
+        </div>
+        <div class="assistant-messages" id="assistantMessages" aria-live="polite"></div>
+        <div class="assistant-input">
+          <input type="text" id="assistantInput" placeholder="Ask anything..." />
+          <button id="assistantSend" class="assistant-send"><i class="fa fa-paper-plane"></i></button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sidebar overlay -->
+  <div id="sidebarOverlay" class="sidebar-overlay" hidden></div>
+
+  <div class="right-bar">
+    <!-- Calendar -->
+    <div class="calendar">
+      <header>
+        <button id="prevMonth"><i class="fa fa-chevron-left"></i></button>
+        <h2 id="monthYear"></h2>
+        <button id="nextMonth"><i class="fa fa-chevron-right"></i></button>
+      </header>
+      <div class="weekdays" aria-hidden="true">
+        <div>Sun</div>
+        <div>Mon</div>
+        <div>Tue</div>
+        <div>Wed</div>
+        <div>Thu</div>
+        <div>Fri</div>
+        <div>Sat</div>
+      </div>
+      <div class="calendar-days" id="calendarDays"></div>
+    </div>
+
+    <button id="addBtn"><i class="fa-solid fa-plus"></i>  Add Deadline</button>
+
+    <div id="popup">
+      <h3>Add Deadline</h3>
+      <input type="text" id="task" placeholder="Task description" style="border-radius:0.5rem;">
+      <input type="date" id="date"  style="border-radius:0.5rem;">
+      <button id="saveBtn"  style="border-radius:0.5rem;">Save</button>
+      <button onclick="closePopup()"  style="border-radius:0.5rem;">Cancel</button>
+    </div>
+
+    <div class="options">
+      <button class="gradient-btn" style="background:linear-gradient(135deg, #EF4444 0%, #DC2626 100%);"><i class="fa-solid fa-fire"></i> Report Burnout</button>
+      <div style="margin-top:1rem;">
+        <button class="gradient-btn" id="make_team"><i class="fa-solid fa-plus"></i> Create Project</button>
+        <button class="gradient-btn" id="join_team"><i class="fa-solid fa-plus"></i> Join Project</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal" id="modal">
+    <div class="modal-content">
+      <h3 id="taskDate">Date</h3>
+      <p id="taskDetail">Task details go here...</p>
+      <button class="close-modal" id="closeModal">Close</button>
+    </div>
+  </div>
+
+  <!-- Load app.js first for API configuration -->
+  <script src="../assets/js/app.js"></script>
+  <script src="../assets/js/dashboard_app.js"></script>
+</body>
+</html>

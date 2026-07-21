@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Project Analysis - Member View - HRMS</title>
+  <link rel="icon" href="icon.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/theme.css">
+  <script src="../assets/js/app.js"></script>
+  <link rel="stylesheet" href="../assets/css/analysis.css">
+  <link rel="stylesheet" href="../assets/css/project_analysis_member_style.css">
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <button class="menu-btn" id="menuBtn"><i class="fa fa-bars" style="transform:scale(0.8);"></i></button>
+  <div class="sidebar" id="sidebar">
+    <button class="close-btn" id="closeBtn" style="transform:scale(0.7);"><i class="fa fa-times"></i></button>
+    <h2>Member Dashboard</h2>
+    
+    <!-- User Info Display -->
+    <div id="userInfo" style="background: rgba(255,255,255,0.1); padding: 0.5rem; border-radius: 6px; margin-bottom: 1rem; font-size: 0.9rem;">
+      <small>Loading user info...</small>
+    </div>
+    
+    <a href="dashboard.html">Back to Projects</a>
+    <a href="project_analysis_leader.html" id="leaderViewLink" style="display: none;">Leader View</a>
+    <a href="profile.html">My Profile</a>
+    
+    <!-- Logout button -->
+  <button class="logout-btn" style="background: #d32f2f; color: white; border: none; padding: 0.5rem 1rem; border-radius: 6px; cursor: pointer; margin-top: auto; width: 100%;">Logout</button>
+  </div>
+
+  <!-- Main -->
+  <div class="main-content">
+    <h1 style="color:#1fad82;padding-top:1rem;padding-top:2rem;">Project Alpha - Member Analysis</h1>
+    <div class="analysis-card">
+      <h3>Assigned Work</h3>
+      <ul id="assignedWork">
+        <li>Design wireframes</li>
+        <li>Build login page</li>
+        <li>Integrate calendar component</li>
+        <li>Add responsiveness</li>
+      </ul>
+    </div>
+
+    <div class="analysis-card">
+      <h3>Completed Work</h3>
+      <ul id="completedWork">
+        <li>Navigation sidebar</li>
+        <li>Login/Registration form</li>
+      </ul>
+    </div>
+
+    <div class="analysis-card">
+      <h3>Checklist</h3>
+      <ul id="checklist" class="checklist"></ul>
+    </div>
+  </div>
+
+  <!-- Floating Options -->
+  <div class="options">
+    <button class="gradient-btn" onclick="window.location.href='dashboard.html'">Dashboard</button>
+  </div>
+
+  <script src="../assets/js/project_analysis_member_app.js"></script>
+</body>
+</html>

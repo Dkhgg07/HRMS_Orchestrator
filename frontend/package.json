@@ -1,0 +1,14 @@
+{
+  "name": "hrms-frontend",
+  "version": "1.0.0",
+  "description": "HRMS Frontend Application",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx http-server . -p 3000 -c-1 --cors",
+    "dev": "npx live-server --port=3000 --host=localhost --cors"
+  },
+  "devDependencies": {
+    "http-server": "^14.1.1",
+    "live-server": "^1.2.2"
+  }
+}

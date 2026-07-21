@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Project Analysis - Team Leader - HRMS</title>
+  <link rel="icon" href="icon.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/theme.css">
+  <script src="../assets/js/app.js"></script>
+  <link rel="stylesheet" href="../assets/css/analysis.css">
+  <link rel="stylesheet" href="../assets/css/project_analysis_leader_style.css">
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <button class="menu-btn" id="menuBtn"><i class="fa fa-bars" style="transform:scale(0.6);"></i></button>
+  <div class="sidebar" id="sidebar">
+    <button class="close-btn" id="closeBtn" style="transform:scale(0.7);"><i class="fa fa-times"></i></button>
+    <h2>Team Leader Dashboard</h2>
+    
+    <!-- User Info Display -->
+    <div id="userInfo" style="background: rgba(255,255,255,0.1); padding: 0.5rem; border-radius: 6px; margin-bottom: 1rem; font-size: 0.9rem;">
+      <small>Loading user info...</small>
+    </div>
+    
+    <a href="dashboard.html">Back to Projects</a>
+    <a href="profile.html">My Profile</a>
+    
+    <!-- Logout button -->
+  <button class="logout-btn" style="background: #d32f2f; color: white; border: none; padding: 0.5rem 1rem; border-radius: 6px; cursor: pointer; margin-top: auto; width: 100%;">Logout</button>
+  </div>
+
+  <!-- Main -->
+  <div class="main-content" style="margin-top:2.5rem;">
+    <h1 style="color:#1fad82;">Project Alpha - Team Leader Analysis</h1>
+
+    <!-- Team Members -->
+    <div class="member-cards" id="memberCards">
+      <!-- Loading placeholder for team members -->
+      <p style="color: #64748b; text-align: center; margin: 2rem;">Loading team members...</p>
+    </div>
+
+    <!-- Member Analysis -->
+    <div class="analysis-card">
+      <h3 id="memberName" style="color:white;">Select a member to view details</h3>
+      <h4>Assigned Work</h4>
+      <ul id="assignedList"></ul>
+      <h4>Completed Work</h4>
+      <ul id="completedList"></ul>
+    </div>
+
+    <!-- Assign Work -->
+    <div class="assign-work">
+      <h3>Assign New Work</h3>
+      <input type="text" id="taskInput" placeholder="Enter task description"/>
+      <select id="memberSelect">
+        <option value="">Select team member...</option>
+      </select>
+      <select id="prioritySelect">
+        <option value="low">Low Priority</option>
+        <option value="medium" selected>Medium Priority</option>
+        <option value="high">High Priority</option>
+      </select>
+      <button onclick="assignWork()">Assign Task</button>
+    </div>
+
+    <!-- Team Management -->
+    <div class="team-management" style="margin-top: 2rem;">
+      <h3>Team Management</h3>
+      <div style="display: flex; gap: 1rem; margin-top: 1rem;">
+        <button onclick="showRemoveMemberDialog()" style="background: #f59e0b; color: white; border: none; padding: 0.5rem 1rem; border-radius: 6px; cursor: pointer;">
+          Remove Member
+        </button>
+        <button onclick="showDeleteProjectDialog()" style="background: #ef4444; color: white; border: none; padding: 0.5rem 1rem; border-radius: 6px; cursor: pointer;">
+          Delete Project
+        </button>
+      </div>
+    </div>
+  </div>
+  <script src="../assets/js/project_analysis_leader.js"></script>
+</body>
+</html>
